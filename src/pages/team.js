@@ -54,7 +54,7 @@ const Team = () => {
                         quote="Greg quote here"
                         bio="A master mechanic, Greg was the individual that initially brought Annie back to flying condition in the 1980's. Much to our relief, he enthusiastically volunteered his expertise in restoring her back to a flyable condition."
                         imageSource={`${greg}`}
-                        borderColor="rgb(247, 187, 36)"
+                        borderColor="#5d53e7"
                     />
 
                     <TeamMember
@@ -62,7 +62,7 @@ const Team = () => {
                         quote="Bob quote here"
                         bio="A highly skilled pilot in his own right, Bob brings over 16,000 hours of flight experience (much of it in tail wheel) to the group, as well as an equal zeal in seeing Annie return to the skies."
                         imageSource={`${bob}`}
-                        borderColor="#5d53e7"
+                        borderColor="rgb(247, 187, 36)"
                     />
 
                     <TeamMember
