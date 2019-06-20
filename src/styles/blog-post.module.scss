@@ -1,0 +1,32 @@
+$green: #1ea896;
+
+.wrapper {
+    padding: 1rem;
+}
+
+.post-wrapper {
+    max-width: 700px;
+    margin: 2rem auto;
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+}
+
+.post-title {
+    text-align: center;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.post-author {
+    font-style: italic;
+    padding: 8px 5px;
+    border-top: 1.5px solid $green;
+    border-bottom: 1px solid $green;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+}

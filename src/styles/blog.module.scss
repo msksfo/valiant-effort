@@ -1,0 +1,38 @@
+$black: #333;
+
+.wrapper {
+    padding: 1rem;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+
+.post {
+    border-left: 5px double salmon;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    background-color: #eee;
+    list-style-type: none;
+
+    a {
+        text-decoration: none;
+        color: $black;
+    }
+}
+
+.post:hover {
+    background-color: #ddd;
+}
+
+.blog-post-title {
+    font-weight: 500;
+    font-size: 1.8rem;
+}

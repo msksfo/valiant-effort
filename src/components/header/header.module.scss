@@ -1,0 +1,45 @@
+$black: #333;
+
+.header {
+    padding: 0 1rem;
+    display: grid;
+    border-bottom: 2px solid black;
+
+    .logo {
+        font-weight: 300;
+        margin-bottom: 16px;
+    }
+
+    nav {
+        /*
+        border: 1px solid pink;
+        */
+    }
+
+    .nav-list {
+        padding: 0;
+        margin: 0;
+        display: inline-flex;
+        flex-wrap: wrap;
+        list-style-type: none;
+    }
+
+    .link {
+        display: block;
+        padding: 8px 15px 8px 0;
+        transition: color 0.2s ease;
+        text-decoration: none;
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+        color: $black;
+    }
+
+    .link:hover {
+        color: #c7002f;
+        text-decoration: underline;
+    }
+
+    .active-link {
+        color: #aaa;
+    }
+}

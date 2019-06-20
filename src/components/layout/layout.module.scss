@@ -1,0 +1,14 @@
+$black: #333;
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .main {
+        background-color: white;
+
+        /* to ensure the footer sticks to the bottom of the page */
+        flex-grow: 1;
+    }
+}

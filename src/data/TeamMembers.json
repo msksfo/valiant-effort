@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Martin Michaud",
+        "quote": "We are guardians of history",
+        "bio": "With 23,000 flight hours under his belt, Martin is without a doubt the most experienced pilot in the group. Somewhere along the way, he also picked up the love of warbirds, in which he has amassed over 1,000 in serveral types. That combined experience has served him well as a full time flight instructor, and in that cpacity, he has trained many pilots in civilian aircraft as well as warbirds.",
+        "photo": {
+            "imageSource": "../images/cirrus.jpg"
+        }
+    },
+    {
+        "name": "Alex Esguerra",
+        "quote": "In the last four years of flying Annie, she has taught me more about the life of a WW2 aviator than I have learned in the last four decades!",
+        "bio": "Alex is the best pilot. Plus he loves the plane the most. He should get to keep it.",
+        "photo": {
+            "imageSource": "../images/cirrus.jpg"
+        }
+    },
+    {
+        "name": "Taurus",
+        "quote": "nice quote from Tarus",
+        "bio": "Taurus is very nice. And he proposed to Midori in the BT-13. That's all I know.",
+        "photo": {
+            "imageSource": "../images/cirrus.jpg"
+        }
+    }
+]

@@ -1,0 +1,27 @@
+$black: #333;
+
+.history {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.annieFigure {
+    max-width: 700px;
+    padding: 0 1rem;
+    margin: 3rem auto;
+
+    .annieImage {
+        display: block;
+        max-width: 100%;
+        border: 1px solid $black;
+    }
+}
+
+@media screen and (min-width: 732px) {
+    .annieFigure {
+        padding: 0;
+    }
+}

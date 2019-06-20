@@ -5,5 +5,35 @@
  */
 
 module.exports = {
-  /* Your site config here */
+    siteMetadata: {
+        title: "Valiant Effort",
+    },
+    plugins: [
+        "gatsby-plugin-react-helmet",
+        "gatsby-plugin-sass",
+        "gatsby-transformer-json",
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/src/images`,
+                name: `images`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/src/data`,
+                name: `data`,
+            },
+        },
+        "gatsby-transformer-sharp",
+        "gatsby-plugin-sharp",
+        {
+            resolve: "gatsby-source-contentful",
+            options: {
+                spaceId: process.env.CONTENTFUL_SPACE_ID,
+                accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+            },
+        },
+    ],
 }
