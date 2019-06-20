@@ -77,7 +77,7 @@ const Team = () => {
                         quote="Keith quote here"
                         bio="Keith bio"
                         imageSource={`${cirrus}`}
-                        borderColor="#7154b"
+                        borderColor="#97154b"
                     />
                 </ul>
             </div>
