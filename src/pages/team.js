@@ -68,7 +68,7 @@ const Team = () => {
                     <TeamMember
                         name="Alex Esguerra"
                         quote="In the last four years of flying Annie, she has taught me more about the life of a WW2 aviator than I have learned in the last four decades!"
-                        bio="Alex is the best pilot. Plus he loves the plane the most. He should get to keep it."
+                        bio="A long time military aviation buff, Alex has spent a good majority of his time flying Annie by honoring the veterans who actually flew that aircraft type. While he celebrates all veterans, he is especially passionate about the Women Airforce Service Pilots, a couple of which, he has personally flown in Annie. "
                         imageSource={`${alex}`}
                         borderColor="#157eed"
                     />
