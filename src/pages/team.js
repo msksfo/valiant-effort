@@ -58,7 +58,7 @@ const Team = () => {
                     />
 
                     <TeamMember
-                        name="Bob Goddwin"
+                        name="Bob Goodwin"
                         quote="Bob quote here"
                         bio="A highly skilled pilot in his own right, Bob brings over 16,000 hours of flight experience (much of it in tail wheel) to the group, as well as an equal zeal in seeing Annie return to the skies."
                         imageSource={`${bob}`}
