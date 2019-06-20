@@ -6,6 +6,7 @@
     grid-row-gap: 50px;
 
     figure {
+        order: 0;
         align-self: center;
     }
 }
@@ -26,6 +27,7 @@
 }
 
 .donate-text {
+    order: 1;
     align-self: center;
 }
 
@@ -53,6 +55,7 @@
 //? code for responsive iframe by Ben Marshall ->  https://benmarshall.me/responsive-iframes/
 
 .iframe-container {
+    order: 1;
     grid-column-start: 1;
     grid-column-end: -1;
 
@@ -75,6 +78,10 @@
 @media screen and (min-width: 700px) {
     .wrapper {
         grid-template-columns: 3fr 4fr;
+
+        figure {
+            order: 1;
+        }
     }
 }
 
