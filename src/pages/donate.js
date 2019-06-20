@@ -43,7 +43,7 @@ const Donate = () => {
 
                     <a
                         className={donateStyles.donateButton}
-                        href="https://www.google.com"
+                        href="https://www.gofundme.com/help-us-save-annie-our-bt13"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
