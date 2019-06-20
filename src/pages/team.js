@@ -44,15 +44,15 @@ const Team = () => {
                     <TeamMember
                         name="Taurus"
                         quote="Taurus quote here"
-                        bio="Taurus married Midori"
+                        bio="Taurus' love of flying Annie is equalled by his passion for maintaining her in an airworthy state. As the leader of this effort, he has put in countless hours in saving the airframe from disposal and planning it's ultimate repair."
                         imageSource={`${taurus}`}
                         borderColor="#e78a53"
                     />
 
                     <TeamMember
-                        name="Greg Eli"
+                        name="Greg Ely"
                         quote="Greg quote here"
-                        bio="Greg bio"
+                        bio="A master mechanic, Greg was the individual that initially brought Annie back to flying condition in the 1980's. Much to our relief, he enthusiastically volunteered his expertise in restoring her back to a flyable condition."
                         imageSource={`${greg}`}
                         borderColor="rgb(247, 187, 36)"
                     />
@@ -60,7 +60,7 @@ const Team = () => {
                     <TeamMember
                         name="Bob Goddwin"
                         quote="Bob quote here"
-                        bio="Bob bio"
+                        bio="A highly skilled pilot in his own right, Bob brings over 16,000 hours of flight experience (much of it in tail wheel) to the group, as well as an equal zeal in seeing Annie return to the skies."
                         imageSource={`${bob}`}
                         borderColor="#5d53e7"
                     />
