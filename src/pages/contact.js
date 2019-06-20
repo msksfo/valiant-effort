@@ -15,11 +15,21 @@ const Contact = () => {
                     </p>
 
                     <p>
-                        In the meantime, if you'd like to get in touch, you can
-                        reach Taurus at (831)-402-6782, Alex at (707)-342-8422.
-                        You can also email us at the following address:
-                        valianteffortllc@gmail.com
+                        In the meantime, if you'd like to get in touch, choose
+                        the most convenient option from the list below.
                     </p>
+
+                    <ul className={contactStyles.contactList}>
+                        <li className={contactStyles.contact}>
+                            Alex ~ 707-342-8422
+                        </li>
+                        <li className={contactStyles.contact}>
+                            Taurus ~ 831-402-6782
+                        </li>
+                        <li className={contactStyles.contact}>
+                            valianteffortllc@gmail.com
+                        </li>
+                    </ul>
                 </div>
             </div>
         </Layout>
