@@ -10,5 +10,9 @@ $black: #333;
 
         /* to ensure the footer sticks to the bottom of the page */
         flex-grow: 1;
+
+        /* so i can apply flex-grow: 1 to child component .wrapper */
+        display: flex;
+        flex-direction: column;
     }
 }

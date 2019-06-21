@@ -9,7 +9,7 @@ const Contact = () => {
             <Head title="Contact" />
             <div className={contactStyles.wrapper}>
                 <div className={contactStyles.contact}>
-                    <p className={contactStyles.contact}>
+                    <p>
                         Our website is still under construction. Please be
                         patient with us. Our contact form will be finished soon.
                     </p>
@@ -20,13 +20,13 @@ const Contact = () => {
                     </p>
 
                     <ul className={contactStyles.contactList}>
-                        <li className={contactStyles.contact}>
+                        <li className={contactStyles.contactMethod}>
                             Alex ~ 707-342-8422
                         </li>
-                        <li className={contactStyles.contact}>
+                        <li className={contactStyles.contactMethod}>
                             Taurus ~ 831-402-6782
                         </li>
-                        <li className={contactStyles.contact}>
+                        <li className={contactStyles.contactMethod}>
                             valianteffortllc@gmail.com
                         </li>
                     </ul>

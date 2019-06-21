@@ -22,7 +22,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
             }
         }
     `)
-
+    console.log(res)
     // 3. CREATE A NEW PAGE for each markdown (or contentful) blog post
     // create a page (based on the blog-post template) for every markdown file
 
