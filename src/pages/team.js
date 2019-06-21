@@ -42,7 +42,7 @@ const Team = () => {
                     />
 
                     <TeamMember
-                        name="Taurus"
+                        name="Taurus Fey"
                         quote="In many ways, I feel that Annie chose me. I am grateful for the opportunity she has given me in being one of her caretakers, and seeing her return to the sky is the great aim that I and the team have in site. It's a tremendous honor!"
                         bio="Taurus' love of flying Annie is equalled by his passion for maintaining her in an airworthy state. As the leader of this effort, he has put in countless hours in saving the airframe from disposal and planning it's ultimate repair."
                         imageSource={`${taurus}`}
@@ -51,15 +51,13 @@ const Team = () => {
 
                     <TeamMember
                         name="Greg Ely"
-                        quote="Greg quote here"
                         bio="A master mechanic, Greg was the individual that initially brought Annie back to flying condition in the 1980's. Much to our relief, he enthusiastically volunteered his expertise in restoring her back to a flyable condition."
                         imageSource={`${greg}`}
                         borderColor="#5d53e7"
                     />
 
                     <TeamMember
-                        name="Bob Goodwin"
-                        quote="Bob quote here"
+                        name="Bob Goodwyn"
                         bio="A highly skilled pilot in his own right, Bob brings over 16,000 hours of flight experience (much of it in tail wheel) to the group, as well as an equal zeal in seeing Annie return to the skies."
                         imageSource={`${bob}`}
                         borderColor="rgb(247, 187, 36)"
@@ -75,8 +73,6 @@ const Team = () => {
 
                     <TeamMember
                         name="Keith Zimbauer"
-                        quote="Keith quote here"
-                        bio="Keith bio"
                         imageSource={`${cirrus}`}
                         borderColor="#97154b"
                     />

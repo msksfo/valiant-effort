@@ -15,7 +15,9 @@ const TeamMember = props => {
 
             <h3 className={teamMemberStyles.teamMemberName}>{props.name}</h3>
 
-            <q className={teamMemberStyles.quote}>{props.quote}</q>
+            {props.quote && (
+                <q className={teamMemberStyles.quote}>{props.quote}</q>
+            )}
 
             <p>{props.bio}</p>
         </li>
