@@ -61,6 +61,7 @@ const Donate = () => {
 
                 <div className={donateStyles.iframeContainer}>
                     <iframe
+                        title="Annie's Story - The Bay's BT-13"
                         src="https://www.youtube.com/embed/ASc0dtO40gI"
                         frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

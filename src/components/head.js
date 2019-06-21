@@ -12,7 +12,9 @@ const Head = ({ title }) => {
             }
         }
     `)
-    return <Helmet title={`${title} | ${data.site.siteMetadata.title}`} />
+    return (
+        <Helmet title={`${title} | ${data.site.siteMetadata.title}`}></Helmet>
+    )
 }
 
 export default Head
