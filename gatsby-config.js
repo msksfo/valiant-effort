@@ -13,7 +13,7 @@ module.exports = {
         "gatsby-plugin-sass",
         "gatsby-transformer-json",
         {
-            resolve: "gatby-plugin-html-attributes",
+            resolve: "gatsby-plugin-html-attributes",
             options: {
                 lang: "en",
             },
