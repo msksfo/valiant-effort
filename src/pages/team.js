@@ -43,7 +43,7 @@ const Team = () => {
 
                     <TeamMember
                         name="Taurus"
-                        quote="Taurus quote here"
+                        quote="In many ways, I feel that Annie chose me. I am grateful for the opportunity she has given me in being one of her caretakers, and seeing her return to the sky is the great aim that I and the team have in site. It's a tremendous honor!"
                         bio="Taurus' love of flying Annie is equalled by his passion for maintaining her in an airworthy state. As the leader of this effort, he has put in countless hours in saving the airframe from disposal and planning it's ultimate repair."
                         imageSource={`${taurus}`}
                         borderColor="#e78a53"
