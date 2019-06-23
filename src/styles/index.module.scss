@@ -36,6 +36,9 @@ p {
     background-position: center;
     background-repeat: no-repeat;
 
+    display: flex;
+    flex-direction: column;
+
     h1 {
         margin-top: 0;
         display: flex;
@@ -52,7 +55,7 @@ p {
         padding: 0;
         margin: 0;
 
-        display: flex;
+        display: inline-flex;
         flex-direction: column;
     }
 
@@ -61,8 +64,10 @@ p {
     }
 
     nav {
-        display: inline-flex;
-        margin-top: 75px;
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
     }
 
     a {
@@ -84,8 +89,5 @@ p {
         color: #c7002f;
         background: white;
         border-radius: 3px;
-        /*
-        text-decoration: underline;
-        */
     }
 }
