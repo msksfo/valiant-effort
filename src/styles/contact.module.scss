@@ -13,18 +13,16 @@
 }
 
 .contact {
-    max-width: 600px;
+    max-width: 900px;
     font-size: 1.2rem;
-    padding: 0 1rem;
-    background-color: white;
+
+    background-color: #f0f3f9;
     border-radius: 5px;
 }
 
-.contact-list {
-    padding: 0;
-    list-style-position: inside;
-}
-
-.contact-method {
-    padding: 5px 0;
+@media screen and (min-width: 870px) {
+    .contact {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
 }
