@@ -1,5 +1,4 @@
 import React from "react"
-import Contact from "../../pages/contact"
 import contactFormStyles from "../contactForm/contactForm.module.scss"
 
 const ContactForm = () => {
