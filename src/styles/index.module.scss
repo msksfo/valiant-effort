@@ -26,8 +26,6 @@ p {
 }
 
 .wrapper {
-    position: relative;
-
     min-height: 100vh;
     padding: 0.3rem 1rem;
 
@@ -36,38 +34,8 @@ p {
     background-position: center;
     background-repeat: no-repeat;
 
-    display: flex;
-    flex-direction: column;
-
-    h1 {
-        margin-top: 0;
-        display: flex;
-        justify-content: flex-end;
-
-        color: white;
-        font-weight: 100;
-        letter-spacing: 1.5px;
-        font-size: 2.5rem;
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-
-        display: inline-flex;
-        flex-direction: column;
-    }
-
     li {
         flex-grow: 1;
-    }
-
-    nav {
-        flex-grow: 1;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
     }
 
     a {
@@ -85,9 +53,144 @@ p {
         font-size: 1.3rem;
     }
 
-    a:hover {
+    a:hover,
+    a:focus {
         color: #c7002f;
         background: white;
         border-radius: 3px;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    margin-top: 0;
+    /*
+    display: flex;
+    justify-content: flex-end;
+    */
+    color: white;
+    font-weight: 100;
+
+    /* //* in place of display flex, justify content flex-end????  */
+    text-align: right;
+}
+
+/* hide 'menu' from sighted users */
+.sr-only {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+.toggle-menu-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+.toggle-menu-button:hover,
+.toggle-menu:focus {
+    cursor: pointer;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 30px;
+}
+
+.hamburger-top {
+    width: 100%;
+    height: 5px;
+    background-color: $black;
+}
+
+.hamburger-middle {
+    width: 100%;
+    height: 5px;
+    background-color: $black;
+}
+
+.hamburger-bottom {
+    width: 100%;
+    height: 5px;
+    background-color: $black;
+}
+
+/* the ul inside the nav is initially hidden, then shown when state.isOpen is true */
+.mobile-nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 5px;
+    width: 100%;
+}
+
+.mobile-nav {
+    border-radius: 5px;
+}
+
+/* hide full width nav for mobile viewport widths */
+.full-nav {
+    display: none;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    display: inline-flex;
+    flex-direction: column;
+}
+
+/********** MEDIA QUERIES **********/
+@media screen and (min-width: 750px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        display: block;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+        letter-spacing: 1.5px;
+    }
+
+    /* hide mobile nav, show full width nav */
+    .mobile-nav {
+        display: none;
+    }
+
+    .full-nav {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-grow: 1;
     }
 }
