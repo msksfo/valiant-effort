@@ -24,14 +24,14 @@ const CompanyInfo = props => {
                 <li>
                     <FontAwesomeIcon size="lg" icon={faPhoneVolume} />
                     <span className={companyInfoStyles.info}>
-                        Alex ~ {props.alexPhone}
+                        Taurus ~ {props.taurusPhone}
                     </span>
                 </li>
 
                 <li>
                     <FontAwesomeIcon size="lg" icon={faPhoneVolume} />
                     <span className={companyInfoStyles.info}>
-                        Taurus ~ {props.taurusPhone}
+                        Alex ~ {props.alexPhone}
                     </span>
                 </li>
 
