@@ -26,16 +26,27 @@
     }
 }
 
-// larger devices show default calendar, monthly view with tabs for week & agenda
-.iframe-container {
+// not sure why i need this, but without it, the height of the calendar was huge
+.full-width-wrapper {
     display: none;
     max-width: 700px;
     margin: 0 auto;
+}
+
+// larger devices show default calendar, monthly view with tabs for week & agenda
+.iframe-container {
+    display: none;
+    /*
+    max-width: 700px;
+    margin: 0 auto;
+    */
 
     position: relative;
     padding-bottom: 75%;
     height: 0;
     overflow: hidden;
+
+    height: 100%;
 }
 
 .iframe-container .calendar-iframe {
@@ -51,7 +62,8 @@
         display: none;
     }
 
-    .iframe-container {
+    .iframe-container,
+    .full-width-wrapper {
         display: block;
     }
 }
