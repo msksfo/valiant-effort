@@ -10,7 +10,25 @@
 
 //? code for responsive iframe by Ben Marshall ->  https://benmarshall.me/responsive-iframes/
 
+// mobile calendar shows agenda view
+.mobileIframeContainer {
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+
+    .calendar-iframe {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// larger devices show default calendar, monthly view with tabs for week & agenda
 .iframe-container {
+    display: none;
     max-width: 700px;
     margin: 0 auto;
 
@@ -26,4 +44,14 @@
     top: 0;
     width: 100%;
     height: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    .mobileIframeContainer {
+        display: none;
+    }
+
+    .iframe-container {
+        display: block;
+    }
 }
