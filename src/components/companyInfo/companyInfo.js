@@ -1,10 +1,7 @@
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelope, faPhoneVolume } from "@fortawesome/free-solid-svg-icons"
-import {
-    faFacebook,
-    faFacebookSquare,
-} from "@fortawesome/free-brands-svg-icons"
+import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons"
 import companyInfoStyles from "../companyInfo/companyInfo.module.scss"
 
 const CompanyInfo = props => {
