@@ -10,7 +10,7 @@ const Contact = () => {
         <Layout>
             <Head title="Contact" />
             <div className={contactStyles.wrapper}>
-                <div className={contactStyles.contact}>
+                <section className={contactStyles.contact}>
                     <CompanyInfo
                         companyName="Valiant Effort LLC"
                         companyEmail="valianteffortllc@gmail.com"
@@ -19,7 +19,7 @@ const Contact = () => {
                     />
 
                     <ContactForm />
-                </div>
+                </section>
             </div>
         </Layout>
     )
