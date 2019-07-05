@@ -9,7 +9,8 @@ const Donate = () => {
     return (
         <Layout>
             <Head title="Donate" />
-            <div className={donateStyles.wrapper}>
+
+            <section className={donateStyles.wrapper}>
                 <div className={donateStyles.donateText}>
                     <p>
                         If you'd like to donate to our cause, you may do so
@@ -59,7 +60,7 @@ const Donate = () => {
                     />
                 </figure>
 
-                <div className={donateStyles.iframeContainer}>
+                <article className={donateStyles.iframeContainer}>
                     <iframe
                         title="Annie's Story - The Bay's BT-13"
                         src="https://www.youtube.com/embed/ASc0dtO40gI"
@@ -67,8 +68,8 @@ const Donate = () => {
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen
                     ></iframe>
-                </div>
-            </div>
+                </article>
+            </section>
         </Layout>
     )
 }
