@@ -2,7 +2,7 @@ import React from "react"
 import Head from "../components/head"
 import Layout from "../components/layout/layout"
 import donateStyles from "../styles/donate.module.scss"
-import cartoon from "../images/bt-cartoon-a.jpg"
+import cartoon from "../images/btCartoon.jpg"
 import { Link } from "gatsby"
 
 const Donate = () => {

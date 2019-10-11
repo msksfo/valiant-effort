@@ -4,12 +4,12 @@ import Head from "../components/head"
 import Layout from "../components/layout/layout"
 import teamStyles from "../styles/team.module.scss"
 
-import cirrus from "../images/cirrus.jpg"
 import martin from "../images/martin.jpg"
 import alex from "../images/alex2.jpg"
-import taurus from "../images/taurus.jpg"
+import taurus from "../images/taurus2.jpg"
 import bob from "../images/bob.jpg"
 import greg from "../images/greg.jpg"
+import keith from "../images/keith.jpg"
 
 import TeamMember from "../components/teamMember/teamMember"
 
@@ -36,7 +36,7 @@ const Team = () => {
                     <TeamMember
                         name="Martin Michaud"
                         quote="We are guardians of history"
-                        bio="With 23,000 flight hours under his belt, Martin is without a doubt the most experienced pilot in the group. Somewhere along the way, he also picked up the love of warbirds, in which he has amassed over 1,000 in serveral types. That combined experience has served him well as a full time flight instructor, and in that cpacity, he has trained many pilots in civilian aircraft as well as warbirds."
+                        bio="With 23,000 flight hours under his belt, Martin is without a doubt the most experienced pilot in the group. Somewhere along the way, he also picked up the love of warbirds, in which he has amassed over 1,000 in several types. That combined experience has served him well as a full time flight instructor, and in that cpacity, he has trained many pilots in civilian aircraft as well as warbirds."
                         imageSource={`${martin}`}
                         borderColor="#43c44c"
                     />
@@ -66,14 +66,15 @@ const Team = () => {
                     <TeamMember
                         name="Alex Esguerra"
                         quote="In the last four years of flying Annie, she has taught me more about the life of a WW2 aviator than I have learned in the last four decades!"
-                        bio="A long time military aviation buff, Alex has spent a good majority of his time flying Annie by honoring the veterans who actually flew that aircraft type. While he celebrates all veterans, he is especially passionate about the Women Airforce Service Pilots, a couple of which, he has personally flown in Annie. "
+                        bio="A long time military aviation buff, Alex has spent a good majority of his time flying Annie by honoring the veterans who actually flew that aircraft type. While he celebrates all veterans, he is especially passionate about the Women Airforce Service Pilots, a couple of which, he has personally flown in Annie."
                         imageSource={`${alex}`}
                         borderColor="#157eed"
                     />
 
                     <TeamMember
                         name="Keith Zimbauer"
-                        imageSource={`${cirrus}`}
+                        bio="Keith has been involved in custom fabrication work and restoring cars, race cars, and boats for over 20 years. He brings an extensive knowledge of sheet metal working to our team as well as an extensive overall expertise in all things mechanical. Keith has been a high school and college auto shop teacher and presently works as a project manager for a large construction company. Keith has had a life long interest in aviation and vintage airplanes and brings a wealth of knowledge to our team! "
+                        imageSource={`${keith}`}
                         borderColor="#97154b"
                     />
                 </ul>
