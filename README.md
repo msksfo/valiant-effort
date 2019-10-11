@@ -6,16 +6,16 @@ Valiant Effort is a website I created for a group of pilots and mechanics workin
 
 ## Getting Started
 
--clone or download the repo
--cd into your project directory and install all project dependencies with npm install
--run npm start to start the development server
--the site is now live at http://localhost:8000
--optionally, open another browser window at http://Localhost:8000/__graphqL if you wish to experiment querying the data. You can learn more about this tool in the [Gatsby tutorial](gatsbyjs.org/tutorial/part-five/#introducing-graphiql)
+-   clone or download the repo
+-   cd into your project directory and install all project dependencies with npm install
+-   run npm start to start the development server
+-   the site is now live at http://localhost:8000
+-   -ptionally, open another browser window at http://Localhost:8000/__graphqL if you wish to experiment querying the data. You can learn more about this tool in the [Gatsby tutorial](gatsbyjs.org/tutorial/part-five/#introducing-graphiql)
 
 ## Credits
 
--Thanks to [Andrew Mead](https://mead.io/gatsby-bootcamp) for this fantastic tutorial on building a blog with Gatsby and Contentful
--Illustration artwork by [Nino](https://www.fiverr.com/onintheartist)]
+-   Thanks to [Andrew Mead](https://mead.io/gatsby-bootcamp) for this fantastic tutorial on building a blog with Gatsby and Contentful
+-   Illustration artwork by [Nino](https://www.fiverr.com/onintheartist)
 
 ## Learning Gatsby
 
