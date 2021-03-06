@@ -84,7 +84,7 @@ const Team = () => {
                         quote="I like planes"
                         bio="This is Edgar. He likes planes."
                         imageSource={`${edgar}`}
-                        borderColor="#a20031"
+                        borderColor="#008080"
                     />
                 </ul>
             </div>
