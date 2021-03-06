@@ -10,6 +10,7 @@ import taurus from "../images/taurus2.jpg"
 import bob from "../images/bob.jpg"
 import greg from "../images/greg.jpg"
 import keith from "../images/keith.jpg"
+import edgar from "../images/edgar.jpg"
 
 import TeamMember from "../components/teamMember/teamMember"
 
@@ -76,6 +77,14 @@ const Team = () => {
                         bio="Keith has been involved in custom fabrication work and restoring cars, race cars, and boats for over 20 years. He brings an extensive knowledge of sheet metal working to our team as well as an extensive overall expertise in all things mechanical. Keith has been a high school and college auto shop teacher and presently works as a project manager for a large construction company. Keith has had a life long interest in aviation and vintage airplanes and brings a wealth of knowledge to our team! "
                         imageSource={`${keith}`}
                         borderColor="#97154b"
+                    />
+
+                    <TeamMember
+                        name="Edgar Xiong"
+                        quote="I like planes"
+                        bio="This is Edgar. He likes planes."
+                        imageSource={`${edgar}`}
+                        borderColor="#a20031"
                     />
                 </ul>
             </div>
