@@ -164,6 +164,19 @@ p {
 
     display: inline-flex;
     flex-direction: column;
+
+    transform: translateX(-100px);
+    animation: slideIn 0.5s ease-in 0.8s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
 
 /********** MEDIA QUERIES **********/
