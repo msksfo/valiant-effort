@@ -1,7 +1,9 @@
 .wrapper {
-    padding: 100px 1rem;
-
     background-color: #f6f6f6;
+}
+
+.team {
+    padding: 50px 1rem;
 
     /* pattern by Gradient Magic 
        https://www.gradientmagic.com/collection/lightbg/gradient/1599333717161 
@@ -21,6 +23,29 @@
             transparent 11px
         ),
         linear-gradient(90deg, hsl(256, 7%, 84%), hsl(256, 7%, 84%));
+}
+.introText {
+    max-width: 650px;
+    margin: 0 auto 175px;
+}
+
+.scrollLink {
+    text-decoration: none;
+    color: #2d4368;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.scrollLink:hover {
+    text-decoration: underline;
+}
+
+.signatures {
+    display: inline-block;
+    font-style: italic;
+    color: #2d4368;
+    background-color: #e4eaf3;
+    padding: 2px 8px;
 }
 
 .team-member-name {
@@ -64,7 +89,7 @@
 
 .team-list {
     list-style-type: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 
     flex-wrap: wrap;
@@ -74,4 +99,86 @@
     grid-column-gap: 50px;
     grid-row-gap: 100px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.imageGallery {
+    padding: 50px 1rem;
+    /* background-color: pink; */
+
+    header {
+        display: grid;
+        margin: 0 auto 2rem;
+    }
+
+    form {
+        label {
+            font-size: inherit;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        label::before {
+            content: "";
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #b1d079;
+            margin-right: 15px;
+        }
+
+        label input {
+            margin-left: 10px;
+        }
+    }
+}
+
+.submit {
+    display: block;
+    font-size: inherit;
+    border: none;
+    margin-top: 1rem;
+    background-color: #dc6148;
+    color: white;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit:hover {
+    background-color: #e17a65;
+}
+
+.cat {
+    display: none;
+}
+
+.images {
+    margin: 50px 0;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.image {
+    max-width: 100%;
+}
+
+@media (min-width: 500px) {
+    .imageGallery header {
+        grid-template-columns: 200px auto;
+        align-items: center;
+        max-width: 800px;
+        margin: 0 auto 4rem;
+    }
+
+    .cat {
+        display: block;
+        width: 200px;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
 }
