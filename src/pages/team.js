@@ -55,6 +55,18 @@ const Team = () => {
             })
     }
 
+    const handleChange = (e) => {
+        // because the initial styling is color: transparent. if the user chooses a file, let them see it's value.
+
+        //? why doesn't document.querySelector('.fileInput') work???? 
+       const fileInput = document.querySelector('input[type="file"]');
+       
+       if(e.target.value) {
+           fileInput.style.color = 'inherit'
+       }
+       
+    }
+
     const handleSubmit = (e) => {
         const myForm = document.querySelector('form')
         e.preventDefault();
@@ -152,28 +164,33 @@ const Team = () => {
                      
                     <form method='post' onSubmit={handleSubmit} >
                         <label htmlFor='imageUpload'> Select image to upload (teammembers only)   
-                            <input type='file' id='imageUpload' accept='image/*'></input>
+                            <input className={teamStyles.fileInput} type='file' id='imageUpload' accept='image/*' onChange={handleChange}></input>
                         </label>
 
                         <input className={teamStyles.submit} type='submit' name='submit' value='Upload Image'/>
 
                     </form>
                 
+                    <div className={teamStyles.outerContainer}>
+                        <div className={teamStyles.innerContainer}>
+                            <div className={teamStyles.imageGalleryWrapper}>
+                                <div className={teamStyles.images}>
+                                
+                                    {
+                                        cloudinaryImages.map((image, idx) => {
 
-                    <div className={teamStyles.images}>
-                    
-                        {
-                            cloudinaryImages.map((image, idx) => {
-
-                                return <img 
-                                            className={teamStyles.image}
-                                            key={idx}
-                                            src={image.node.secure_url}
-                                            alt={'Team members doing restoration work on Annie'}
-                                        />
-                            })
-                        }
-                        
+                                            return <img 
+                                                        className={teamStyles.image}
+                                                        key={idx}
+                                                        src={image.node.secure_url}
+                                                        alt={'Team members doing restoration work on Annie'}
+                                                    />
+                                        })
+                                    }
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 
