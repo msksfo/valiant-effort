@@ -11,82 +11,172 @@ import bob from "../images/bob.jpg"
 import greg from "../images/greg.jpg"
 import keith from "../images/keith.jpg"
 import edgar from "../images/edgar.jpg"
+import cat from "../images/catOnPlane.png"
 
 import TeamMember from "../components/teamMember/teamMember"
 
 const Team = () => {
+    
     const data = useStaticQuery(graphql`
-        query {
-            allTeamMembersJson {
+        query CloudinaryImage {
+            allCloudinaryMedia(sort: {fields: created_at, order: DESC}) {
                 edges {
                     node {
-                        name
-                        quote
-                        bio
+                        secure_url
                     }
                 }
             }
         }
     `)
+    
+     const cloudinaryImages = data.allCloudinaryMedia.edges
+     
+    const uploadToCloudinary = ( imageUrl) => {
+
+        const uploadPreset = 'valiantEffortProject';
+        const uploadEndpoint = 'https://api.cloudinary.com/v1_1/tesguerra/upload/'
+
+        const fd = new FormData();
+        fd.append('file', imageUrl);
+        fd.append('upload_preset', uploadPreset)
+
+        fetch(uploadEndpoint, {
+            method: 'POST',
+            body: fd,
+        })
+            .then(res => {
+                return res.json()
+            })
+            .then(data => {
+                console.log(data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+    const handleSubmit = (e) => {
+        const myForm = document.querySelector('form')
+        e.preventDefault();
+
+        const password = prompt('Teammember: please enter the secret password')
+
+        if (!password || password !== process.env.GATSBY_IMAGE_UPLOAD_PASSWORD) {
+             myForm.reset();
+            return;
+        }
+
+
+        const selectedFile = document.querySelector('[type=file]').files[0];
+        // console.log('correct', selectedFile)
+        uploadToCloudinary(selectedFile);                               
+    }
+     
 
     return (
         <Layout>
             <Head title="Team" />
             <div className={teamStyles.wrapper}>
-                <ul className={teamStyles.teamList}>
-                    <TeamMember
-                        name="Martin Michaud"
-                        quote="We are guardians of history"
-                        bio="With 23,000 flight hours under his belt, Martin is without a doubt the most experienced pilot in the group. Somewhere along the way, he also picked up the love of warbirds, in which he has amassed over 1,000 in several types. That combined experience has served him well as a full time flight instructor, and in that cpacity, he has trained many pilots in civilian aircraft as well as warbirds."
-                        imageSource={`${martin}`}
-                        borderColor="#43c44c"
-                    />
+                <section className={teamStyles.team}>
+                    <div className={teamStyles.introText}>
+                        <p>When you are finished reading about us, <a className={teamStyles.scrollLink} href='#image-gallery'>scroll</a> down to see photos of the restoration project, as captured by members of the team. We're glad to have you here. Thanks so much for your interest and support!<br></br> Sincerely,</p>
+                        
+                        <p><span className={teamStyles.signatures}>Big Daddy, Skipper, Knobby, Francis, Gandolf, Hot Dog, and 3 Ball</span> ( We'll leave it to you to figure out who's who ) 
+                        </p> 
+                    </div>
+                    
 
-                    <TeamMember
-                        name="Taurus Fey"
-                        quote="In many ways, I feel that Annie chose me. I am grateful for the opportunity she has given me in being one of her caretakers, and seeing her return to the sky is the great aim that I and the team have in site. It's a tremendous honor!"
-                        bio="Taurus' love of flying Annie is equalled by his passion for maintaining her in an airworthy state. As the leader of this effort, he has put in countless hours in saving the airframe from disposal and planning it's ultimate repair."
-                        imageSource={`${taurus}`}
-                        borderColor="#e78a53"
-                    />
+                    <ul className={teamStyles.teamList}>
+                        <TeamMember
+                            name="Martin Michaud"
+                            quote="We are guardians of history"
+                            bio="With 23,000 flight hours under his belt, Martin is without a doubt the most experienced pilot in the group. Somewhere along the way, he also picked up the love of warbirds, in which he has amassed over 1,000 in several types. That combined experience has served him well as a full time flight instructor, and in that cpacity, he has trained many pilots in civilian aircraft as well as warbirds."
+                            imageSource={`${martin}`}
+                            borderColor="#43c44c"
+                        />
 
-                    <TeamMember
-                        name="Greg Ely"
-                        bio="A master mechanic, Greg was the individual that initially brought Annie back to flying condition in the 1980's. Much to our relief, he enthusiastically volunteered his expertise in restoring her back to a flyable condition."
-                        imageSource={`${greg}`}
-                        borderColor="#5d53e7"
-                    />
+                        <TeamMember
+                            name="Taurus Fey"
+                            quote="In many ways, I feel that Annie chose me. I am grateful for the opportunity she has given me in being one of her caretakers, and seeing her return to the sky is the great aim that I and the team have in site. It's a tremendous honor!"
+                            bio="Taurus' love of flying Annie is equalled by his passion for maintaining her in an airworthy state. As the leader of this effort, he has put in countless hours in saving the airframe from disposal and planning it's ultimate repair."
+                            imageSource={`${taurus}`}
+                            borderColor="#e78a53"
+                        />
 
-                    <TeamMember
-                        name="Bob Goodwyn"
-                        bio="A highly skilled pilot in his own right, Bob brings over 16,000 hours of flight experience (much of it in tail wheel) to the group, as well as an equal zeal in seeing Annie return to the skies."
-                        imageSource={`${bob}`}
-                        borderColor="rgb(247, 187, 36)"
-                    />
+                        <TeamMember
+                            name="Greg Ely"
+                            bio="A master mechanic, Greg was the individual that initially brought Annie back to flying condition in the 1980's. Much to our relief, he enthusiastically volunteered his expertise in restoring her back to a flyable condition."
+                            imageSource={`${greg}`}
+                            borderColor="#5d53e7"
+                        />
 
-                    <TeamMember
-                        name="Alex Esguerra"
-                        quote="In the last four years of flying Annie, she has taught me more about the life of a WW2 aviator than I have learned in the last four decades!"
-                        bio="A long time military aviation buff, Alex has spent a good majority of his time flying Annie by honoring the veterans who actually flew that aircraft type. While he celebrates all veterans, he is especially passionate about the Women Airforce Service Pilots, a couple of which, he has personally flown in Annie."
-                        imageSource={`${alex}`}
-                        borderColor="#157eed"
-                    />
+                        <TeamMember
+                            name="Bob Goodwyn"
+                            bio="A highly skilled pilot in his own right, Bob brings over 16,000 hours of flight experience (much of it in tail wheel) to the group, as well as an equal zeal in seeing Annie return to the skies."
+                            imageSource={`${bob}`}
+                            borderColor="rgb(247, 187, 36)"
+                        />
 
-                    <TeamMember
-                        name="Keith Zimbauer"
-                        bio="Keith has been involved in custom fabrication work and restoring cars, race cars, and boats for over 20 years. He brings an extensive knowledge of sheet metal working to our team as well as an extensive overall expertise in all things mechanical. Keith has been a high school and college auto shop teacher and presently works as a project manager for a large construction company. Keith has had a life long interest in aviation and vintage airplanes and brings a wealth of knowledge to our team! "
-                        imageSource={`${keith}`}
-                        borderColor="#97154b"
-                    />
+                        <TeamMember
+                            name="Alex Esguerra"
+                            quote="In the last four years of flying Annie, she has taught me more about the life of a WW2 aviator than I have learned in the last four decades!"
+                            bio="A long time military aviation buff, Alex has spent a good majority of his time flying Annie by honoring the veterans who actually flew that aircraft type. While he celebrates all veterans, he is especially passionate about the Women Airforce Service Pilots, a couple of which, he has personally flown in Annie."
+                            imageSource={`${alex}`}
+                            borderColor="#157eed"
+                        />
 
-                    <TeamMember
-                        name="Edgar Xiong"
-                        quote="I like planes"
-                        bio="This is Edgar. He likes planes."
-                        imageSource={`${edgar}`}
-                        borderColor="#008080"
-                    />
-                </ul>
+                        <TeamMember
+                            name="Keith Zimbauer"
+                            bio="Keith has been involved in custom fabrication work and restoring cars, race cars, and boats for over 20 years. He brings an extensive knowledge of sheet metal working to our team as well as an extensive overall expertise in all things mechanical. Keith has been a high school and college auto shop teacher and presently works as a project manager for a large construction company. Keith has had a life long interest in aviation and vintage airplanes and brings a wealth of knowledge to our team! "
+                            imageSource={`${keith}`}
+                            borderColor="#97154b"
+                        />
+
+                        <TeamMember
+                            name="Edgar Xiong"
+                            quote="I like planes"
+                            bio="This is Edgar. He likes planes."
+                            imageSource={`${edgar}`}
+                            borderColor="#008080"
+                        />
+                    </ul>
+                </section>
+                
+                
+                <section id='image-gallery' className={teamStyles.imageGallery}>
+                    <header>
+                         <img src={`${cat}`} className={teamStyles.cat}/>
+                          <h1>Annie's Restoration Journey In Pictures</h1>
+                    </header>
+
+                     
+                    <form method='post' onSubmit={handleSubmit} >
+                        <label htmlFor='imageUpload'> Select image to upload (teammembers only)   
+                            <input type='file' id='imageUpload' accept='image/*'></input>
+                        </label>
+
+                        <input className={teamStyles.submit} type='submit' name='submit' value='Upload Image'/>
+
+                    </form>
+                
+
+                    <div className={teamStyles.images}>
+                    
+                        {
+                            cloudinaryImages.map((image, idx) => {
+
+                                return <img 
+                                            className={teamStyles.image}
+                                            key={idx}
+                                            src={image.node.secure_url}
+                                            alt={'Team members doing restoration work on Annie'}
+                                        />
+                            })
+                        }
+                        
+                    </div>
+                </section>
+                
             </div>
         </Layout>
     )
