@@ -102,15 +102,25 @@
 }
 
 .imageGallery {
-    padding: 50px 1rem;
-    /* background-color: pink; */
+    /*  padding: 50px 1rem; */
+
+    /* background-color: #e4eaf3; */
+    /* background-color: #2d4368; */
 
     header {
         display: grid;
         margin: 0 auto 2rem;
+
+        border: rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(4.5px);
+        border-radius: 10px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     }
 
     form {
+        margin: 50px 1rem;
+
         label {
             font-size: inherit;
             display: flex;
@@ -127,11 +137,12 @@
             background-color: #b1d079;
             margin-right: 15px;
         }
-
-        label input {
-            margin-left: 10px;
-        }
     }
+}
+
+.fileInput {
+    margin-left: 10px;
+    color: transparent;
 }
 
 .submit {
@@ -154,11 +165,34 @@
     display: none;
 }
 
+.outerContainer {
+    background: linear-gradient(
+        to right,
+        #182439,
+        #182439 50%,
+        #7a96c5 50%,
+        #7a96c5 100%
+    );
+    padding: 20px 20px;
+}
+
+.innerContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.imageGalleryWrapper {
+    background: white;
+}
+
 .images {
-    margin: 50px 0;
     display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    /* border: 1px solid red; */
 }
 
 .image {
@@ -180,5 +214,29 @@
 
     h1 {
         font-size: 1.9rem;
+    }
+
+    .innerContainer {
+        border: 1px solid white;
+        padding: 30px;
+    }
+
+    .imageGalleryWrapper {
+        background: linear-gradient(
+            to right,
+            #f0f3f9,
+            #f0f3f9 10%,
+            white 10%,
+            white 90%,
+            #f0f3f9 90%,
+            #f0f3f9 100%
+        );
+        padding: 30px 12.5%;
+    }
+}
+
+@media (min-width: 1100px) {
+    .outerContainer {
+        padding: 50px 50px;
     }
 }
