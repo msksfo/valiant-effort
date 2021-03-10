@@ -3,6 +3,8 @@
 }
 
 .team {
+    position: relative;
+
     padding: 50px 1rem;
 
     /* pattern by Gradient Magic 
@@ -24,6 +26,38 @@
         ),
         linear-gradient(90deg, hsl(256, 7%, 84%), hsl(256, 7%, 84%));
 }
+
+.cartoon {
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    top: 30%;
+    left: 30px;
+    background: url("../images/alexCartoon.png");
+    background-size: cover;
+    transform: translateX(-150px);
+}
+
+@keyframes animateCartoonIn {
+    from {
+        transform: translateX(-150px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes animateCartoonOut {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-150px);
+    }
+}
+
 .introText {
     max-width: 650px;
     margin: 0 auto 175px;
@@ -101,25 +135,31 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
+@keyframes animateSky {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
 .imageGallery {
-    /*  padding: 50px 1rem; */
-
-    /* background-color: #e4eaf3; */
-    /* background-color: #2d4368; */
-
     header {
         display: grid;
+
+        //*
         margin: 0 auto 2rem;
 
-        border: rgba(255, 255, 255, 0.18);
-        background: rgba(255, 255, 255, 0.3);
-        backdrop-filter: blur(4.5px);
-        border-radius: 10px;
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        position: relative;
+        z-index: 1000;
     }
 
     form {
         margin: 50px 1rem;
+
+        position: relative;
+        z-index: 1000;
 
         label {
             font-size: inherit;
@@ -135,9 +175,14 @@
             height: 15px;
             border-radius: 50%;
             background-color: #b1d079;
+            background-color: #8cab59;
             margin-right: 15px;
         }
     }
+}
+
+.headerWrapper {
+    padding: 50px 1rem;
 }
 
 .fileInput {
@@ -191,8 +236,6 @@
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-    /* border: 1px solid red; */
 }
 
 .image {
@@ -203,8 +246,14 @@
     .imageGallery header {
         grid-template-columns: 200px auto;
         align-items: center;
+
+        //*
         max-width: 800px;
         margin: 0 auto 4rem;
+
+        /*
+        transform: translateX(-20px);
+        */
     }
 
     .cat {
@@ -235,6 +284,36 @@
     }
 }
 
+@media (min-width: 500px) and (prefers-reduced-motion: no-preference) {
+    .headerWrapper {
+        background: url("https://images.pexels.com/photos/3575541/pexels-photo-3575541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+
+        background-position: 0px 0px;
+        background-repeat: repeat-x;
+        position: relative;
+        padding: 50px 1rem;
+        animation: animateSky 90s linear infinite;
+    }
+
+    .headerWrapper::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: 500;
+    }
+}
+
+@media (min-width: 950px) and (prefers-reduced-motion: no-preference) {
+    .cartoon {
+        animation: animateCartoonIn 2s 2s ease forwards,
+            animateCartoonOut 0.8s 8s ease forwards;
+    }
+}
 @media (min-width: 1100px) {
     .outerContainer {
         padding: 50px 50px;
