@@ -90,10 +90,11 @@ const Team = () => {
             <Head title="Team" />
             <div className={teamStyles.wrapper}>
                 <section className={teamStyles.team}>
+                    <div className={teamStyles.cartoon}></div>
                     <div className={teamStyles.introText}>
                         <p>When you are finished reading about us, <a className={teamStyles.scrollLink} href='#image-gallery'>scroll</a> down to see photos of the restoration project, as captured by members of the team. We're glad to have you here. Thanks so much for your interest and support!<br></br> Sincerely,</p>
                         
-                        <p><span className={teamStyles.signatures}>Big Daddy, Skipper, Knobby, Francis, Gandolf, Hot Dog, and 3 Ball</span> ( We'll leave it to you to figure out who's who ) 
+                        <p><span className={teamStyles.signatures}>Skipper, Big Daddy, Knobby, Francis, Gandolf, Hot Dog, and 3 Ball</span> ( We'll leave it to you to figure out who's who ) 
                         </p> 
                     </div>
                     
@@ -146,8 +147,8 @@ const Team = () => {
 
                         <TeamMember
                             name="Edgar Xiong"
-                            quote="I like planes"
-                            bio="This is Edgar. He likes planes."
+                            quote="It is our duty to preserve and tell Annie's story"
+                            bio="Edgar is a recent addition to our group, however he has been a long time fan and supporter of Annie. He is an up and coming warbird pilot who is presently earning his chops in aerobatic flight in Decathalons and otherwise flying anything he can. Filled with a passions for aviation from a young age, Edgar is pursuing his passion in aviation daily and it shows with his willingness to get his hands dirty and learn during our work sessions. We are looking forward to watching him go through the warbird checkout process!"
                             imageSource={`${edgar}`}
                             borderColor="#008080"
                         />
@@ -156,20 +157,22 @@ const Team = () => {
                 
                 
                 <section id='image-gallery' className={teamStyles.imageGallery}>
-                    <header>
-                         <img src={`${cat}`} className={teamStyles.cat}/>
-                          <h1>Annie's Restoration Journey In Pictures</h1>
-                    </header>
+                    <div className={teamStyles.headerWrapper}>
+                        
+                        <header>
+                            <img src={`${cat}`} className={teamStyles.cat}/>
+                            <h1>Annie's Restoration Journey In Pictures</h1>
+                        </header>
+                        
+                        <form method='post' onSubmit={handleSubmit} >
+                            <label htmlFor='imageUpload'> Select image to upload (teammembers only)   
+                                <input className={teamStyles.fileInput} type='file' id='imageUpload' accept='image/*' onChange={handleChange}></input>
+                            </label>
 
-                     
-                    <form method='post' onSubmit={handleSubmit} >
-                        <label htmlFor='imageUpload'> Select image to upload (teammembers only)   
-                            <input className={teamStyles.fileInput} type='file' id='imageUpload' accept='image/*' onChange={handleChange}></input>
-                        </label>
-
-                        <input className={teamStyles.submit} type='submit' name='submit' value='Upload Image'/>
-
-                    </form>
+                            <input className={teamStyles.submit} type='submit' name='submit' value='Upload Image'/>
+                        </form>
+                    </div>
+                    
                 
                     <div className={teamStyles.outerContainer}>
                         <div className={teamStyles.innerContainer}>
