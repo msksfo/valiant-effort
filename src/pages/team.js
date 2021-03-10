@@ -90,6 +90,7 @@ const Team = () => {
             <Head title="Team" />
             <div className={teamStyles.wrapper}>
                 <section className={teamStyles.team}>
+                    {/* 
                     <div className={teamStyles.cartoon}></div>
                     <div className={teamStyles.introText}>
                         <p>When you are finished reading about us, <a className={teamStyles.scrollLink} href='#image-gallery'>scroll</a> down to see photos of the restoration project, as captured by members of the team. We're glad to have you here. Thanks so much for your interest and support!<br></br> Sincerely,</p>
@@ -97,7 +98,7 @@ const Team = () => {
                         <p><span className={teamStyles.signatures}>Skipper, Big Daddy, Knobby, Francis, Gandolf, Hot Dog, and 3 Ball</span> ( We'll leave it to you to figure out who's who ) 
                         </p> 
                     </div>
-                    
+                    */}
 
                     <ul className={teamStyles.teamList}>
                         <TeamMember
@@ -155,7 +156,7 @@ const Team = () => {
                     </ul>
                 </section>
                 
-                
+                {/* 
                 <section id='image-gallery' className={teamStyles.imageGallery}>
                     <div className={teamStyles.headerWrapper}>
                         
@@ -196,7 +197,7 @@ const Team = () => {
                         </div>
                     </div>
                 </section>
-                
+             */}
             </div>
         </Layout>
     )
