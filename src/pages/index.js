@@ -81,7 +81,7 @@ class Home extends Component {
                         )}
                     </nav>
 
-                    <h1 className={indexStyles.logo}>Valiant Effort LLC</h1>
+                    <h1 className={indexStyles.logo}>Valiant Effort</h1>
                 </header>
 
                 <nav className={indexStyles.fullNav}>
