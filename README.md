@@ -15,7 +15,8 @@ Valiant Effort is a website I created for a group of pilots and mechanics workin
 ## Credits
 
 -   Thanks to [Andrew Mead](https://mead.io/gatsby-bootcamp) for this fantastic tutorial on building a blog with Gatsby and Contentful
--   Illustration artwork by [Nino](https://www.fiverr.com/onintheartist)
+-   Aircraft llustration artwork by [Nino](https://www.fiverr.com/onintheartist)
+-   Team member artwork created with [SP-Studio](https://www.sp-studio.de/)
 
 ## Learning Gatsby
 
