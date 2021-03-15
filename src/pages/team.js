@@ -1,5 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import Head from "../components/head"
 import Layout from "../components/layout/layout"
 import teamStyles from "../styles/team.module.scss"
@@ -11,94 +10,25 @@ import bob from "../images/bob.jpg"
 import greg from "../images/greg.jpg"
 import keith from "../images/keith.jpg"
 import edgar from "../images/edgar.jpg"
-import cat from "../images/catOnPlane.png"
+
 
 import TeamMember from "../components/teamMember/teamMember"
 
 const Team = () => {
-    
-    const data = useStaticQuery(graphql`
-        query CloudinaryImage {
-            allCloudinaryMedia(sort: {fields: created_at, order: DESC}) {
-                edges {
-                    node {
-                        secure_url
-                    }
-                }
-            }
-        }
-    `)
-    
-     const cloudinaryImages = data.allCloudinaryMedia.edges
      
-    const uploadToCloudinary = ( imageUrl) => {
-
-        const uploadPreset = 'valiantEffortProject';
-        const uploadEndpoint = 'https://api.cloudinary.com/v1_1/tesguerra/upload/'
-
-        const fd = new FormData();
-        fd.append('file', imageUrl);
-        fd.append('upload_preset', uploadPreset)
-
-        fetch(uploadEndpoint, {
-            method: 'POST',
-            body: fd,
-        })
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-                console.log(data)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }
-
-    const handleChange = (e) => {
-        // because the initial styling is color: transparent. if the user chooses a file, let them see it's value.
-
-        //? why doesn't document.querySelector('.fileInput') work???? 
-       const fileInput = document.querySelector('input[type="file"]');
-       
-       if(e.target.value) {
-           fileInput.style.color = 'inherit'
-       }
-       
-    }
-
-    const handleSubmit = (e) => {
-        const myForm = document.querySelector('form')
-        e.preventDefault();
-
-        const password = prompt('Teammember: please enter the secret password')
-
-        if (!password || password !== process.env.GATSBY_IMAGE_UPLOAD_PASSWORD) {
-             myForm.reset();
-            return;
-        }
-
-
-        const selectedFile = document.querySelector('[type=file]').files[0];
-        // console.log('correct', selectedFile)
-        uploadToCloudinary(selectedFile);                               
-    }
-     
-
     return (
         <Layout>
             <Head title="Team" />
             <div className={teamStyles.wrapper}>
                 <section className={teamStyles.team}>
-                    {/* 
-                    <div className={teamStyles.cartoon}></div>
+                    
                     <div className={teamStyles.introText}>
-                        <p>When you are finished reading about us, <a className={teamStyles.scrollLink} href='#image-gallery'>scroll</a> down to see photos of the restoration project, as captured by members of the team. We're glad to have you here. Thanks so much for your interest and support!<br></br> Sincerely,</p>
+                        <p> We're glad to have you here. Thanks so much for your interest and support!<br></br> Sincerely,</p>
                         
                         <p><span className={teamStyles.signatures}>Skipper, Big Daddy, Knobby, Francis, Gandolf, Hot Dog, and 3 Ball</span> ( We'll leave it to you to figure out who's who ) 
                         </p> 
                     </div>
-                    */}
+                    
 
                     <ul className={teamStyles.teamList}>
                         <TeamMember
@@ -155,49 +85,7 @@ const Team = () => {
                         />
                     </ul>
                 </section>
-                
-                {/* 
-                <section id='image-gallery' className={teamStyles.imageGallery}>
-                    <div className={teamStyles.headerWrapper}>
-                        
-                        <header>
-                            <img src={`${cat}`} className={teamStyles.cat}/>
-                            <h1>Annie's Restoration Journey In Pictures</h1>
-                        </header>
-                        
-                        <form method='post' onSubmit={handleSubmit} >
-                            <label htmlFor='imageUpload'> Select image to upload (teammembers only)   
-                                <input className={teamStyles.fileInput} type='file' id='imageUpload' accept='image/*' onChange={handleChange}></input>
-                            </label>
-
-                            <input className={teamStyles.submit} type='submit' name='submit' value='Upload Image'/>
-                        </form>
-                    </div>
-                    
-                
-                    <div className={teamStyles.outerContainer}>
-                        <div className={teamStyles.innerContainer}>
-                            <div className={teamStyles.imageGalleryWrapper}>
-                                <div className={teamStyles.images}>
-                                
-                                    {
-                                        cloudinaryImages.map((image, idx) => {
-
-                                            return <img 
-                                                        className={teamStyles.image}
-                                                        key={idx}
-                                                        src={image.node.secure_url}
-                                                        alt={'Team members doing restoration work on Annie'}
-                                                    />
-                                        })
-                                    }
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-             */}
+               
             </div>
         </Layout>
     )
