@@ -13,17 +13,24 @@ const TeamMember = props => {
     }
 
     return (
-        <li className={teamMemberStyles.teamMemberLi}>
+        <li className={ isActive ? cx(teamMemberStyles.teamMemberLi, teamMemberStyles.liActive) : teamMemberStyles.teamMemberLi}>
             
             <img
-                className={teamMemberStyles.profilePic}
+                className={isActive ? cx( teamMemberStyles.profilePic, teamMemberStyles.profilePicActive) : teamMemberStyles.profilePic}
                 src={ !isActive ? `${props.cartoonImageSource}` : `${props.imageSource}`}
                 alt={props.name}
             />
 
-            <button className={teamMemberStyles.btn} onClick={handleClick}>
-                <span className={teamMemberStyles.open}>&#8964;</span>
-                    <span className={teamMemberStyles.close}>&times;</span>
+            <button className={teamMemberStyles.btn}
+                     onClick={handleClick}
+                     aria-label={isActive ? 'Close' : 'Open'}
+
+            >
+                 {isActive ? '\u0078'
+                            : <span>{'\u2304'}</span>
+                }
+                            
+                    
             </button>
 
             <div className={ isActive ? cx(teamMemberStyles.textContent, teamMemberStyles.active) : cx(teamMemberStyles.textContent) }>
@@ -33,9 +40,8 @@ const TeamMember = props => {
                     <q className={teamMemberStyles.quote}>{props.quote}</q>
                 )}
 
-                <p>{props.bio}</p>
-            </div>
-               
+                <p className={teamMemberStyles.bio}>{props.bio}</p>
+            </div>   
         </li>
     )
 }

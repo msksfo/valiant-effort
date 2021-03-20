@@ -1,6 +1,11 @@
+/* why aren't these working???? */
+:root {
+    --profile-pic-width: 125px;
+    --light-blue: hsl(217, 20, 90);
+    --dark-blue: hsl(217, 56, 40);
+}
+
 .team-member-name {
-    margin-top: 0;
-    text-align: center;
     font-weight: 600;
     letter-spacing: 0.8px;
     font-size: 20px;
@@ -8,31 +13,100 @@
 
 .quote {
     font-size: 1.2rem;
-    text-align: center;
     font-style: italic;
 }
 
 .profile-pic {
-    width: 100px;
-    align-self: center;
-    z-index: 2;
+    width: var(--profile-pic-width);
     position: relative;
-    top: -50px;
+    top: 0.5rem;
     border-radius: 50%;
+    transition: all 0.3s linear;
+}
+
+.profile-pic.profile-pic-active {
+    top: 0;
+    margin: 0.5rem 0;
 }
 
 .team-member-li {
     background-color: white;
-    padding: 0 1rem 1rem;
-
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    min-width: calc(var(--profile-pic-width) + 15px);
     border-radius: 8px;
-
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin: 0.15rem;
 
     &:hover {
-        box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.3);
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
     }
+}
+
+.team-member-li.li-active {
+    padding: 0.75rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: block;
+    max-width: 500px;
+    margin: 1rem 0;
+}
+
+.btn {
+    display: inline-block;
+    position: absolute;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 1.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    top: 0.25rem;
+    right: 0.25rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+
+    color: var(--dark-blue);
+    color: hsl(217, 56, 40);
+}
+
+.btn > * {
+    /*  this is here as a way to vertically center the downward pointing chevron in the button */
+    position: relative;
+    top: -7px;
+}
+
+.btn:focus {
+    opacity: 1;
+    outline: 0;
+    border-radius: 50%;
+
+    /* replaces default outline style */
+    box-shadow: 0 0 0 2px var(--dark-blue);
+
+    box-shadow: 0 0 0 2px hsl(217, 56, 40);
+}
+
+.team-member-li:hover .btn {
+    opacity: 1;
+}
+
+.team-member-li.li-active .btn {
+    opacity: 1;
+    border-radius: 50%;
+
+    /* this is here because my variable is not working. why is it not working????? */
+    background-color: hsl(217, 20, 90);
+}
+
+.textContent {
+    display: none;
+}
+
+.textContent.active {
+    display: block;
+}
+
+.bio {
+    text-align: left;
 }

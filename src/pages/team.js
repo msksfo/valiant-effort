@@ -18,9 +18,7 @@ import keithCartoon from '../images/keithCartoon.png'
 import edgar from "../images/edgar.jpg"
 import edgarCartoon from '../images/edgarCartoon.png'
 
-
 import TeamMember from "../components/teamMember/teamMember"
-
 
 
 const Team = () => {
