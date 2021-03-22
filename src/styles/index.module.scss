@@ -26,8 +26,9 @@ p {
 }
 
 .wrapper {
+    position: relative;
     min-height: 100vh;
-    padding: 0.3rem 1rem;
+    overflow-x: hidden;
 
     background-image: url("../images/homePageImage.jpg");
     background-size: cover;
@@ -42,10 +43,8 @@ p {
         padding: 12px 10px;
         display: flex;
         align-items: center;
-        justify-content: center;
         height: 100%;
 
-        color: white;
         text-decoration: none;
         transition: all 0.2s ease;
 
@@ -61,45 +60,38 @@ p {
     }
 }
 
+.open-menu {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+
 .header {
-    display: flex;
-    justify-content: space-between;
+    text-align: right;
+    padding-right: 1rem;
 }
 
 .logo {
     margin-top: 0;
-    /*
-    display: flex;
-    justify-content: flex-end;
-    */
     color: white;
     font-weight: 100;
-
-    /* //* in place of display flex, justify content flex-end????  */
     text-align: right;
 }
 
-/* hide 'menu' from sighted users */
-.sr-only {
-    clip: rect(1px, 1px, 1px, 1px);
-    clip-path: inset(50%);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
+/* button to open the mobile menu */
+.toggle-menu-open {
     position: absolute;
-}
+    top: 0.5rem;
+    left: 0.5rem;
+    border: 0;
 
-.toggle-menu-button {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+
+    padding: 0.4rem;
     border-radius: 5px;
     font-size: 1rem;
-
     background-color: #fff;
     transition: all 0.2s ease;
 }
@@ -113,43 +105,123 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 30px;
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 .hamburger-top {
     width: 100%;
-    height: 5px;
+    height: 3px;
     background-color: $black;
 }
 
 .hamburger-middle {
     width: 100%;
-    height: 5px;
+    height: 3px;
     background-color: $black;
 }
 
 .hamburger-bottom {
     width: 100%;
-    height: 5px;
+    height: 3px;
     background-color: $black;
 }
 
-/* the ul inside the nav is initially hidden, then shown when state.isOpen is true */
-.mobile-nav-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-
-    display: flex;
-    flex-direction: column;
-
+/* button to close the mobile nav */
+.toggle-menu-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    border: 0;
+    width: 2.5rem;
+    font-size: 1.75rem;
     border-radius: 5px;
-    width: 100%;
+    background-color: #fff;
+    color: inherit;
+    transition: all 0.2s ease;
+    border-radius: 50%;
+    background-color: #d3e0ec;
 }
 
+.toggle-menu-close:hover {
+    cursor: pointer;
+    background-color: #d3e0ec;
+    border-radius: 50%;
+    color: blue;
+}
+
+/* mobile navigation <nav> */
 .mobile-nav {
-    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    min-width: 320px;
+    transform: translateX(-100%);
+    background-color: #08327b;
+}
+
+.red {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 95%;
+    transform: translateX(-100%);
+    background-color: #c31313;
+}
+
+/* mobile navigation <ul> */
+.mobile-nav-list {
+    margin: 0;
+    list-style-type: none;
+    padding: 0.5rem 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 95%;
+    background-color: white;
+    transform: translateX(-100%);
+}
+
+.mobile-nav-list li {
+    width: calc(100% - 3.5rem);
+}
+
+.mobile-nav-list li a {
+    color: #2d4368;
+}
+
+/* .mobile-nav is the first panel to slide in and the last to slide out when user opens/closes the mobile navigation */
+.mobile-nav.show {
+    animation: showMobileMenu 0.6s linear forwards;
+}
+
+.mobile-nav.hide {
+    transform: translateX(0);
+    animation: hideMobileMenu 0.6s 0.5s linear forwards;
+}
+
+/* .red is the second panel to slide in and the second to slide out when user opens/closes the mobile navigation */
+.red.show {
+    animation: showMobileMenu 0.6s 0.3s linear forwards;
+}
+
+.red.hide {
+    transform: translateX(0);
+    animation: hideMobileMenu 0.6s 0.3s linear forwards;
+}
+
+/* .mobile-nav-list is the last panel to slide in and the first to slide out when user opens/closes the mobile navigation */
+.mobile-nav-list.show {
+    animation: showMobileMenu 0.6s 0.5s linear forwards;
+}
+
+.mobile-nav-list.hide {
+    transform: translateX(0);
+    animation: hideMobileMenu 0.6s linear forwards;
 }
 
 /* hide full width nav for mobile viewport widths */
@@ -157,24 +229,35 @@ p {
     display: none;
 }
 
+/* navigation <ul> for larger viewports */
 .nav-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
 
-    display: inline-flex;
-    flex-direction: column;
-
     transform: translateX(-100px);
     animation: slideIn 0.5s ease-in 0.8s forwards;
 }
 
-@keyframes slideIn {
+@keyframes showMobileMenu {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes hideMobileMenu {
     from {
-        transform: translateX(-100px);
+        transform: translateX(0);
     }
 
     to {
+        transform: translateX(-100%);
+    }
+}
+
+/* for larger devices only */
+@keyframes slideIn {
+    100% {
         transform: translateX(0);
     }
 }
@@ -184,6 +267,10 @@ p {
     .wrapper {
         display: flex;
         flex-direction: column;
+    }
+
+    .toggle-menu-open {
+        display: none;
     }
 
     .header {
@@ -205,5 +292,10 @@ p {
         justify-content: flex-start;
         align-items: center;
         flex-grow: 1;
+    }
+
+    a {
+        justify-content: center;
+        color: white;
     }
 }

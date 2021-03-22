@@ -1,7 +1,10 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
 import Head from "../components/head"
+import cx from 'classnames'
 import indexStyles from "../styles/index.module.scss"
+
+//* TODO: make this component a functional component with hooks?
 
 class Home extends Component {
     constructor(props) {
@@ -9,17 +12,19 @@ class Home extends Component {
         this.state = {
             isOpen: false,
             ariaExpanded: false,
-            backgroundColor: "transparent",
+            pageLoaded: false,
         }
 
         this.toggleMenu = this.toggleMenu.bind(this)
     }
 
     toggleMenu() {
+      
         this.setState(prevState => {
             return {
                 isOpen: !prevState.isOpen,
                 ariaExpanded: !prevState.ariaExpanded,
+                pageLoaded: true
             }
         })
     }
@@ -29,36 +34,59 @@ class Home extends Component {
             <div className={indexStyles.wrapper}>
                 <Head title="Home" />
 
-                <header className={indexStyles.header}>
-                    <nav
-                        style={
-                            this.state.isOpen
-                                ? { backgroundColor: "rgba(0, 0, 0, .55)" }
-                                : { backgroundColor: "transparent" }
-                        }
-                        className={indexStyles.mobileNav}
-                    >
-                        <button
-                            onClick={this.toggleMenu}
-                            className={indexStyles.toggleMenuButton}
-                        >
-                            <span className={indexStyles.srOnly}>Menu</span>
-                            <span className={indexStyles.hamburgerIcon}>
-                                <div className={indexStyles.hamburgerTop}></div>
-                                <div
-                                    className={indexStyles.hamburgerMiddle}
-                                ></div>
-                                <div
-                                    className={indexStyles.hamburgerBottom}
-                                ></div>
-                            </span>
-                        </button>
+                <button
+                    onClick={this.toggleMenu}
+                    className={indexStyles.toggleMenuOpen}
+                    aria-label='open navigation menu'
+                >
+                    <span className={indexStyles.hamburgerIcon}>
+                        <div className={indexStyles.hamburgerTop}></div>
+                        <div
+                            className={indexStyles.hamburgerMiddle}
+                        ></div>
+                        <div
+                            className={indexStyles.hamburgerBottom}
+                        ></div>
+                    </span>
+                </button>
 
-                        {this.state.isOpen && (
+
+                <header className={indexStyles.header}>
+                   <h1 className={indexStyles.logo}>Valiant Effort</h1>
+                </header>
+                    {/*
+                        the nested ternary in the nav is because the css animation to close the mobile menu was running immediately on page load. #codenewbie here - feel free to tell me another way of solving this problem.
+                    */}
+                    <nav
+                        className={ this.state.isOpen ?
+                                    cx(indexStyles.mobileNav, indexStyles.show) 
+                                    : this.state.pageLoaded ?
+                                    cx(indexStyles.mobileNav, indexStyles.hide) 
+                                    : cx(indexStyles.mobileNav)}
+                    >
+                        
+
+                        <div className={ this.state.isOpen ?
+                                    cx(indexStyles.red, indexStyles.show) 
+                                    : this.state.pageLoaded ?
+                                    cx(indexStyles.red, indexStyles.hide) 
+                                    : cx(indexStyles.red)}>
+                        
                             <ul
-                                id="mobile-nav-list"
-                                className={indexStyles.mobileNavList}
+                                className={this.state.isOpen ?
+                                    cx(indexStyles.mobileNavList, indexStyles.show)
+                                    : this.state.pageLoaded ?
+                                    cx(indexStyles.mobileNavList, indexStyles.hide)
+                                    : cx(indexStyles.mobileNavList)}
                             >
+                                <button
+                                    onClick={this.toggleMenu}
+                                    className={indexStyles.toggleMenuClose}
+                                    aria-label='close navigation menu'
+                                >   
+                                    &times;
+                                </button>
+                                
                                 <li>
                                     <Link to="/annie">Annie</Link>
                                 </li>
@@ -78,11 +106,8 @@ class Home extends Component {
                                     <Link to="/donate">Donate</Link>
                                 </li>
                             </ul>
-                        )}
+                        </div>
                     </nav>
-
-                    <h1 className={indexStyles.logo}>Valiant Effort</h1>
-                </header>
 
                 <nav className={indexStyles.fullNav}>
                     <ul className={indexStyles.navList}>
