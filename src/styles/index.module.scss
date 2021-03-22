@@ -134,6 +134,7 @@ p {
     right: 0.5rem;
     border: 0;
     width: 2.5rem;
+    height: 2.5rem;
     font-size: 1.75rem;
     border-radius: 5px;
     background-color: #fff;
@@ -141,6 +142,7 @@ p {
     transition: all 0.2s ease;
     border-radius: 50%;
     background-color: #d3e0ec;
+    padding: 0;
 }
 
 .toggle-menu-close:hover {
