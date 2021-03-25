@@ -152,7 +152,9 @@ p {
     color: blue;
 }
 
-/* mobile navigation <nav> */
+/* ******************* mobile navigation styles ****************** */
+
+/* mobile navigation <nav> element */
 .mobile-nav {
     position: absolute;
     top: 0;
@@ -164,6 +166,7 @@ p {
     background-color: #08327b;
 }
 
+/* this div is only for decorative purposes */
 .red {
     position: absolute;
     top: 0;
@@ -174,7 +177,7 @@ p {
     background-color: #c31313;
 }
 
-/* mobile navigation <ul> */
+/* mobile navigation <ul> element */
 .mobile-nav-list {
     margin: 0;
     list-style-type: none;
@@ -226,6 +229,8 @@ p {
     animation: hideMobileMenu 0.6s linear forwards;
 }
 
+/* **************** full width navigation ******************* */
+
 /* hide full width nav for mobile viewport widths */
 .full-nav {
     display: none;
@@ -236,6 +241,7 @@ p {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 @keyframes showMobileMenu {
