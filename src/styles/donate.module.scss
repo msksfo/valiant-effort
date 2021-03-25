@@ -1,4 +1,7 @@
+$black: #333;
+$red: #c7002f;
 $yellow: #ffdd4a;
+$darkBlue: hsl(218, 40%, 29%);
 
 .wrapper {
     padding: 1rem;
@@ -12,21 +15,16 @@ $yellow: #ffdd4a;
 .cartoon {
     max-width: 100%;
     display: block;
-    border: 1px solid #333;
+    border: 1px solid $black;
 }
 
 .link-to-contact {
-    color: #333;
+    color: $black;
     transition: color 0.2s ease;
 }
 
 .link-to-contact:hover {
-    color: #c7002f;
-}
-
-.donate-text {
-    order: 1;
-    align-self: center;
+    color: $red;
 }
 
 .donate-button {
@@ -53,10 +51,6 @@ $yellow: #ffdd4a;
 //? code for responsive iframe by Ben Marshall ->  https://benmarshall.me/responsive-iframes/
 
 .iframe-container {
-    order: 1;
-    grid-column-start: 1;
-    grid-column-end: -1;
-
     overflow: hidden;
     padding-top: 56.25%;
     position: relative;
