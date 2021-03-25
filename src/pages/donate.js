@@ -11,6 +11,14 @@ const Donate = () => {
             <Head title="Donate" />
 
             <section className={donateStyles.wrapper}>
+                <figure>
+                        <img
+                            className={donateStyles.cartoon}
+                            src={cartoon}
+                            alt="BT-13 cartoon"
+                        />
+                </figure>
+
                 <div className={donateStyles.donateText}>
                     <p>
                         If you'd like to donate to our cause, you may do so
@@ -51,14 +59,6 @@ const Donate = () => {
                         Donate
                     </a>
                 </div>
-
-                <figure>
-                    <img
-                        className={donateStyles.cartoon}
-                        src={cartoon}
-                        alt=""
-                    />
-                </figure>
 
                 <article className={donateStyles.iframeContainer}>
                     <iframe
