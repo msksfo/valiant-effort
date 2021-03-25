@@ -266,11 +266,6 @@ p {
 
 /********** MEDIA QUERIES **********/
 @media screen and (min-width: 750px) {
-    .wrapper {
-        display: flex;
-        flex-direction: column;
-    }
-
     .toggle-menu-open {
         display: none;
     }
