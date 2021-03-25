@@ -4,11 +4,9 @@ $yellow: #ffdd4a;
 $darkBlue: hsl(218, 40%, 29%);
 
 .wrapper {
-    padding: 1rem;
-
     figure {
         max-width: 1000px;
-        margin: 2rem auto;
+        margin: 1rem;
     }
 }
 
@@ -16,6 +14,10 @@ $darkBlue: hsl(218, 40%, 29%);
     max-width: 100%;
     display: block;
     border: 1px solid $black;
+}
+
+.donate-text {
+    background-color: pink;
 }
 
 .link-to-contact {
@@ -62,5 +64,11 @@ $darkBlue: hsl(218, 40%, 29%);
         left: 0;
         top: 0;
         width: 100%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .wrapper > figure {
+        margin: 2rem auto;
     }
 }
