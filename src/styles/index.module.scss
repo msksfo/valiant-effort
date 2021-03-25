@@ -236,9 +236,6 @@ p {
     list-style-type: none;
     padding: 0;
     margin: 0;
-
-    transform: translateX(-100px);
-    animation: slideIn 0.5s ease-in 0.8s forwards;
 }
 
 @keyframes showMobileMenu {
@@ -295,6 +292,8 @@ p {
         align-items: center;
         flex-grow: 1;
         background-color: rgba(45, 67, 104, 0.7);
+        transform: translateX(-100%);
+        animation: slideIn 0.5s ease-in 0.8s forwards;
     }
 
     a {
