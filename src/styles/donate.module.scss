@@ -1,11 +1,16 @@
 $black: #333;
-$red: #c7002f;
-$yellow: #ffdd4a;
 $darkBlue: hsl(218, 40%, 29%);
+$brightBlue: hsl(218, 70%, 29%);
+$teal: hsl(178, 50%, 39%);
+$orange: hsl(10, 68%, 57%);
+$brightOrange: hsl(10, 78%, 53%);
+
+$percent: (4210 / 20000);
+$degrees: ($percent * 180);
 
 .wrapper {
     figure {
-        max-width: 1000px;
+        max-width: 800px;
         margin: 1rem;
     }
 }
@@ -16,38 +21,355 @@ $darkBlue: hsl(218, 40%, 29%);
     border: 1px solid $black;
 }
 
-.donate-text {
-    background-color: pink;
+/* ********* MISSION STATEMENT SECTION *********** */
+.mission-statement-container {
+    background-color: $teal;
+    display: grid;
 }
 
-.link-to-contact {
+.mission-statement {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #f3f9fb;
+    padding: 25px 0.5rem;
+    border-radius: 30% 0 0 0;
+
+    h1 {
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    p {
+        max-width: 600px;
+    }
+}
+
+.join {
+    display: block;
+    padding: 8px 10px;
+    width: 125px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background-color: $orange;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    letter-spacing: 0.8px;
+}
+
+/* //TODO: is this hover color even percievable??? */
+.join:hover {
+    background-color: $brightOrange;
+}
+
+.join:focus {
+    outline-color: $teal;
+    outline-offset: 3px;
+}
+
+.join:active {
+    transform: scale(0.95);
+}
+
+.how-you-can-help {
+    background-color: #f3f9fb;
+    padding: 25px 0.5rem;
+    border-radius: 0 0 30% 0;
+}
+
+.help {
+    max-width: 600px;
+    margin-bottom: 5rem;
+}
+
+.link-to-contact,
+.link-to-donate {
     color: $black;
     transition: color 0.2s ease;
 }
 
-.link-to-contact:hover {
-    color: $red;
+.link-to-contact:hover,
+.link-to-donate:hover {
+    color: #da3b1b;
+}
+
+.link-to-contact:focus,
+.link-to-donate:focus {
+    outline-color: $orange;
+}
+
+/* 
+.share {
+    width: 75px;
+    padding: 8px 10px;
+}
+*/
+
+.money-distribution {
+    ul {
+        margin: 0;
+    }
+
+    .heading {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .subheading {
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        max-width: 600px;
+    }
+
+    .subheading::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0.8rem;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: $darkBlue;
+    }
+}
+
+/* 
+    //* 
+    radial progress bar tutorial
+    https://www.youtube.com/watch?v=FnUkVcQ_3CQ
+    //*
+
+*/
+/* *TODO:  extract the progress bar into a component */
+.progress-bar--container {
+    flex-basis: 100%;
+    max-width: 250px;
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    background-color: hsl(218, 40%, 90%);
+    position: relative;
+
+    width: 100%;
+    height: 0;
+
+    /* this will make sure the height is half of the width */
+    padding-bottom: 50%;
+
+    /* this creates a semi circle */
+    border-top-left-radius: 100% 200%;
+    border-top-right-radius: 100% 200%;
+
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    background-color: $brightBlue;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: inherit;
+    height: 100%;
+    transform-origin: center top;
+    transition: all 0.9s ease;
+
+    //: TODO: create a sass mixin for this to be dynamic number???
+    transform: rotate(37.89deg);
+}
+
+.progress-bar-text {
+    /* the width of this center part should be 25% less than the width of the progress bar div */
+    width: 75%;
+    /* make the height double the width, so we can still get a circle */
+    height: 150%;
+
+    border-radius: 50%;
+    background-color: #f3f9fb;
+    position: absolute;
+    left: 50%;
+
+    /* push it down 25% to create the gap */
+    top: 25%;
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* push the text back up so it'e centered in the semi circle */
+    padding-bottom: 25%;
+
+    span {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+}
+
+/* ********** DONATE SECTION ********** */
+
+.donate-text-wrapper {
+    background-color: white;
+
+    .heading {
+        margin-top: 0;
+        font-size: 1.7rem;
+        font-weight: bold;
+        color: hsl(218, 70%, 39%);
+    }
+
+    .heading::after {
+        content: "";
+        display: block;
+        width: 75px;
+        height: 5px;
+        background-color: $teal;
+    }
+}
+
+.donate-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 6rem 1rem;
 }
 
 .donate-button {
     display: block;
+    position: relative;
+    width: 200px;
+    height: 44px;
     text-transform: uppercase;
     text-decoration: none;
     padding: 10px 8px;
     text-align: center;
     border-radius: 5px;
-    background-color: $yellow;
+    background-color: $orange;
+    font-weight: bold;
     transition: all 0.3s ease;
-
-    color: #2d4368;
-    color: #2e6b76;
-
+    color: white;
     font-size: 1.3rem;
     letter-spacing: 0.8px;
 }
 
 .donate-button:hover {
-    background-color: #ffea8e;
+    background-color: $brightOrange;
+}
+
+.donate-button:focus {
+    outline-color: $teal;
+    outline-offset: 3px;
+}
+
+.donate-button:active {
+    transform: scale(0.95);
+}
+
+.cards-wrapper {
+    background-color: hsl(218, 80%, 98%);
+}
+
+.card {
+    background-color: hsl(218, 80%, 95%);
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding-bottom: 3rem;
+}
+
+.share-your-why-heading {
+    margin-top: 0;
+    border-radius: 5px 5px 0 0;
+    padding: 1rem;
+    font-size: 1.4rem;
+    text-align: center;
+    letter-spacing: 1px;
+    color: white;
+    background-color: $darkBlue;
+}
+
+.share-your-why-content {
+    padding: 0.5rem;
+}
+
+.social-icons--wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .social-media-link {
+        display: inline-block;
+        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+        transition: all 0.3s ease;
+    }
+
+    .social-media-link:hover,
+    .social-media-link:focus {
+        transform: scale(1.1);
+        outline-color: $orange;
+    }
+
+    .facebook,
+    .twitter {
+        width: 100%;
+        height: 100%;
+    }
+
+    .facebook,
+    .twitter {
+        color: $teal;
+    }
+
+    .facebook:hover,
+    .twitter:hover,
+    .facebook:focus,
+    .twitter:focus {
+        color: (178, 50%, 19%);
+    }
+
+    .circles {
+        max-width: 100px;
+    }
+}
+
+.pinned-content-wrapper {
+    position: relative;
+    max-width: 400px;
+    border-left: 0.75rem solid $orange;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pinned-content-wrapper::after {
+    content: url("../images/Fifinella.png");
+    display: inline-block;
+    position: absolute;
+    transform: scale(0.25);
+    top: -60%;
+    right: -25%;
+}
+
+.promo-video-pin {
+    padding: 0.75rem;
+    margin: 0;
+    padding-right: 3rem;
+    background-color: white;
+}
+
+.video-section-wrapper {
+    background-color: rgba(0, 0, 0, 0.95);
 }
 
 //? code for responsive iframe by Ben Marshall ->  https://benmarshall.me/responsive-iframes/
@@ -56,6 +378,9 @@ $darkBlue: hsl(218, 40%, 29%);
     overflow: hidden;
     padding-top: 56.25%;
     position: relative;
+
+    max-width: 900px;
+    margin: 2rem auto 0;
 
     iframe {
         position: absolute;
@@ -67,8 +392,92 @@ $darkBlue: hsl(218, 40%, 29%);
     }
 }
 
-@media (min-width: 1000px) {
+/* *************** MEDIA QUERIES **************** */
+
+@media (min-width: 550px) {
+    .mission-statement {
+        padding: 25px;
+    }
+
+    .how-you-can-help {
+        padding: 25px;
+    }
+
+    .social-icons--wrapper {
+        .social-media-link {
+            font-size: 3rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .circles {
+            max-width: 300px;
+        }
+    }
+}
+
+@media (min-width: 650px) {
+    .donate-text {
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-evenly;
+    }
+
+    .mission-statement h1 {
+        line-height: 1.1;
+    }
+
+    .cards-wrapper {
+        padding: 3rem 0 7rem;
+    }
+
+    .card {
+        background-color: white;
+    }
+
+    .share-your-why-content {
+        text-align: center;
+    }
+
+    .social-icons-mobile-wrapper {
+        padding: 2rem 0;
+    }
+
+    .pinned-content-wrapper {
+        top: -4rem;
+    }
+}
+
+@media (min-width: 800px) {
     .wrapper > figure {
-        margin: 2rem auto;
+        margin: 1rem auto;
+    }
+
+    .mission-statement {
+        padding: 75px;
+
+        h1 {
+            font-size: 2.75rem;
+        }
+    }
+
+    .donate-text {
+        padding: 12.5rem 1rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .wrapper > figure {
+        margin: 6rem auto;
+    }
+
+    .mission-statement-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1100px) {
+    .mission-statement-container {
+        grid-template-columns: 3fr 2fr;
     }
 }
