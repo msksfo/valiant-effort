@@ -36,16 +36,10 @@
 // larger devices show default calendar, monthly view with tabs for week & agenda
 .iframe-container {
     display: none;
-    /*
-    max-width: 700px;
-    margin: 0 auto;
-    */
-
     position: relative;
     padding-bottom: 75%;
     height: 0;
     overflow: hidden;
-
     height: 100%;
 }
 

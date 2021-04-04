@@ -17,7 +17,6 @@ const Contact = () => {
                         alexPhone="707-342-8422"
                         taurusPhone="831-402-6782"
                     />
-
                     <ContactForm />
                 </section>
             </div>

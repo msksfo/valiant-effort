@@ -50,7 +50,6 @@ class Home extends Component {
                     </span>
                 </button>
 
-
                 <header className={indexStyles.header}>
                    <h1 className={indexStyles.logo}>Valiant Effort</h1>
                 </header>
@@ -65,7 +64,6 @@ class Home extends Component {
                                     : cx(indexStyles.mobileNav)}
                     >
                         
-
                         <div className={ this.state.isOpen ?
                                     cx(indexStyles.red, indexStyles.show) 
                                     : this.state.pageLoaded ?

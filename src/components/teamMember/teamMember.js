@@ -3,7 +3,6 @@ import cx from 'classnames'
 import teamMemberStyles from "../teamMember/teamMember.module.scss"
 
 
-
 const TeamMember = props => {
    const [isActive, setActive] = useState(false)
 
@@ -24,13 +23,10 @@ const TeamMember = props => {
             <button className={teamMemberStyles.btn}
                      onClick={handleClick}
                      aria-label={isActive ? 'Close' : 'Open'}
-
             >
                  {isActive ? '\u0078'
                             : <span>{'\u2304'}</span>
-                }
-                            
-                    
+                }      
             </button>
 
             <div className={ isActive ? cx(teamMemberStyles.textContent, teamMemberStyles.active) : cx(teamMemberStyles.textContent) }>

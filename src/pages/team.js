@@ -35,7 +35,6 @@ const Team = () => {
                         <p><span className={teamStyles.signatures}>Skipper, Big Daddy, Knobby, Francis, Gandolf, Hot Dog, and 3 Ball</span> ( We'll leave it to you to figure out who's who ) 
                         </p> 
                     </div>
-                    
 
                     <ul className={teamStyles.teamList}>
                         <TeamMember
@@ -45,7 +44,6 @@ const Team = () => {
                             imageSource={`${martin}`}
                             cartoonImageSource={`${martinCartoon}`}
                             borderColor="#43c44c"
-                           
                         />
 
                         <TeamMember

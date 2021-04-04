@@ -12,8 +12,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import circles from '../images/circles.png'
 
-
-
 const Donate = () => {
     const percent = (4210 / 20000) * 100;
 
@@ -68,35 +66,26 @@ const Donate = () => {
                         
                         <div className={donateStyles.moneyDistribution}>
                             <p className={donateStyles.heading}>Where Your Money Goes</p>
-                            <div className={donateStyles.progressBarContainer}>
-                                    <div className={donateStyles.progressBar}>
-                                        <div className={donateStyles.progressBarFill}></div>
-                                        <div className={donateStyles.progressBarText}>
-                                            <p><span>{percent}%</span><br />
-                                            $20,000</p>
-                                        </div>
-                                    </div>
-                                
-                                </div>
-                            <p className={donateStyles.subheading}>100% of your donation goes toward the restoration and maintaiance of our BT-13. </p>
 
-                            {/* 
-                            <ul>
-                                <li>engine</li>
-                                <li>struts</li>
-                                <li>aircraft parts</li>
-                                <li>pizza</li>
-                                <li>other stuff</li>
-                            </ul>
-                            */ }
+                            <div className={donateStyles.progressBarContainer}>
+                                <div className={donateStyles.progressBar}>
+
+                                    <div className={donateStyles.progressBarFill}></div>
+
+                                    <div className={donateStyles.progressBarText}>
+                                        <p><span>{percent}%</span><br />
+                                        $20,000</p>
+                                    </div>
+                                </div>   
+                            </div>
+                            <p className={donateStyles.subheading}>100% of your donation goes toward the restoration and maintaiance of our BT-13. </p>
                         </div>
                     </div>
-                
                 </div>
 
                 <div id='donate' className={donateStyles.donateTextWrapper}>
 
-                   <div className={donateStyles.donateText}>
+                    <div className={donateStyles.donateText}>
                         <p className={donateStyles.heading}>Donate to Valiant Effort</p>
 
                         <a
@@ -134,8 +123,6 @@ const Donate = () => {
                                         />
                                     </a>
                                 
-                                    
-
                                     <img src={circles} className={donateStyles.circles}/>
                                     <a
                                         href='https://twitter.com/share?url=https%3A%2F%2Fvalianteffort.netlify.app%2Fdonate&text=I%20donated%20because%20we%20are%20the%20guardians%20of%20history.&hashtags=WASP%2CWWII%2Caviation%2Chistory%2Cveterans%2Cavgeek%2CVultee'
@@ -167,7 +154,6 @@ const Donate = () => {
                         us. We hope you enjoy it.
                     </p>
                 </div>
-                
                 
                 <article className={donateStyles.videoSectionWrapper}>
                     <div className={donateStyles.iframeContainer}>
