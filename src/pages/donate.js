@@ -145,28 +145,29 @@ const Donate = () => {
                     </div>
                 </div>
                 
-                <div className={donateStyles.pinnedContentWrapper}>
-                    <p className={donateStyles.promoVideoPin}>
-                        Finally, we'd love it if you'd take a moment to watch
-                        our promo video below. We put a lot
-                        of love into creating it, and we think it perfectly
-                        expresses why restoring this plane is so important to
-                        us. We hope you enjoy it.
-                    </p>
-                </div>
-                
-                <article className={donateStyles.videoSectionWrapper}>
-                    <div className={donateStyles.iframeContainer}>
-                        <iframe
-                            title="Annie's Story - The Bay's BT-13"
-                            src="https://www.youtube.com/embed/ASc0dtO40gI"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                        ></iframe>
+                <div className={donateStyles.videoSectionWrapper}>
+                    <div className={donateStyles.pinnedContentWrapper}>
+                        <p className={donateStyles.promoVideoPin}>
+                            Finally, we'd love it if you'd take a moment to watch
+                            our promo video below. We put a lot
+                            of love into creating it, and we think it perfectly
+                            expresses why restoring this plane is so important to
+                            us. We hope you enjoy it.
+                        </p>
                     </div>
-                </article>
                 
+                    <article className={donateStyles.videoOuterWrapper}>
+                        <div className={donateStyles.iframeContainer}>
+                            <iframe
+                                title="Annie's Story - The Bay's BT-13"
+                                src="https://www.youtube.com/embed/ASc0dtO40gI"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </article>
+                </div>
             </section>
         </Layout>
     )

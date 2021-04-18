@@ -283,7 +283,7 @@ $degrees: ($percent * 180);
 
 .card {
     background-color: hsl(218, 80%, 95%);
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
     border-radius: 5px;
     padding-bottom: 3rem;
@@ -350,7 +350,14 @@ $degrees: ($percent * 180);
     position: relative;
     max-width: 400px;
     border-left: 0.75rem solid $orange;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+    margin: 3rem 0;
+    /* box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); */
+
+    /* 
+    margin: 0;
+    box-shadow: none;
+    */
 }
 
 .pinned-content-wrapper::after {
@@ -369,8 +376,10 @@ $degrees: ($percent * 180);
     background-color: white;
 }
 
-.video-section-wrapper {
-    background-color: rgba(0, 0, 0, 0.95);
+/* element is only here to limit the width of the iframe container, but retain aspect ratio */
+.video-outer-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 //? code for responsive iframe by Ben Marshall ->  https://benmarshall.me/responsive-iframes/
@@ -379,9 +388,8 @@ $degrees: ($percent * 180);
     overflow: hidden;
     padding-top: 56.25%;
     position: relative;
-
-    max-width: 900px;
-    margin: 2rem auto 0;
+    margin: 2rem 0 0;
+    margin: 0;
 
     iframe {
         position: absolute;
@@ -444,8 +452,23 @@ $degrees: ($percent * 180);
         padding: 2rem 0;
     }
 
+    .video-section-wrapper {
+        background-color: rgba(0, 0, 0, 0.95);
+    }
+
+    .video-outer-wrapper {
+        /* this is to balance out the -4rem that the pinned content was pulled up */
+        padding-bottom: 4rem;
+    }
+
     .pinned-content-wrapper {
+        margin: 0;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
         top: -4rem;
+    }
+
+    .iframe-container {
+        margin: 2rem auto;
     }
 }
 
