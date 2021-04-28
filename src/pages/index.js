@@ -38,6 +38,7 @@ class Home extends Component {
                     onClick={this.toggleMenu}
                     className={indexStyles.toggleMenuOpen}
                     aria-label='open navigation menu'
+                    aria-controls='menu'
                 >
                     <span className={indexStyles.hamburgerIcon}>
                         <div className={indexStyles.hamburgerTop}></div>
@@ -56,7 +57,7 @@ class Home extends Component {
                     {/*
                         the nested ternary in the nav is because the css animation to close the mobile menu was running immediately on page load. #codenewbie here - feel free to tell me another way of solving this problem.
                     */}
-                    <nav
+                    <nav id='menu'
                         className={ this.state.isOpen ?
                                     cx(indexStyles.mobileNav, indexStyles.show) 
                                     : this.state.pageLoaded ?

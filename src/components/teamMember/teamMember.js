@@ -23,13 +23,14 @@ const TeamMember = props => {
             <button className={teamMemberStyles.btn}
                      onClick={handleClick}
                      aria-label={isActive ? 'Close' : 'Open'}
+                     aria-controls={ `About ${props.name}` }
             >
                  {isActive ? '\u0078'
                             : <span>{'\u2304'}</span>
                 }      
             </button>
 
-            <div className={ isActive ? cx(teamMemberStyles.textContent, teamMemberStyles.active) : cx(teamMemberStyles.textContent) }>
+            <div id={`About ${props.name}`} className={ isActive ? cx(teamMemberStyles.textContent, teamMemberStyles.active) : cx(teamMemberStyles.textContent) }>
                 <h3 className={teamMemberStyles.teamMemberName}>{props.name}</h3>
 
                 {props.quote && (
