@@ -168,6 +168,8 @@ p {
 
     transform: translateX(-100%);
     background-color: #08327b;
+
+    animation: hideVisibility 0.01s ease forwards;
 }
 
 /* this div is only for decorative purposes */
@@ -205,12 +207,14 @@ p {
 
 /* .mobile-nav is the first panel to slide in and the last to slide out when user opens/closes the mobile navigation */
 .mobile-nav.show {
-    animation: showMobileMenu 0.6s linear forwards;
+    animation: showVisibility 0.01s linear forwards,
+        showMobileMenu 0.6s linear forwards;
 }
 
 .mobile-nav.hide {
     transform: translateX(0);
-    animation: hideMobileMenu 0.6s 0.5s linear forwards;
+    animation: hideMobileMenu 0.6s 0.5s linear forwards,
+        hideVisibility 0.01s 1s linear forwards;
 }
 
 /* .red is the second panel to slide in and the second to slide out when user opens/closes the mobile navigation */
@@ -261,6 +265,20 @@ p {
 
     to {
         transform: translateX(-100%);
+    }
+}
+
+@keyframes showVisibility {
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes hideVisibility {
+    100% {
+        opacity: 0;
+        visibility: hidden;
     }
 }
 
